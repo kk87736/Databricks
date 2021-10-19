@@ -1,7 +1,7 @@
 # Databricks notebook source
 dbutils.fs.mount(
-  source = "wasbs://snowflake@kkgatechstorage.blob.core.windows.net",
-  mount_point = "/mnt/azureblob/snowflake",
+  source = dbutils.secrets.get(scope = "test", key = "storageSource"),
+  mount_point = "/mnt/azureblob/snowflake1",
   extra_configs = {"fs.azure.account.key.kkgatechstorage.blob.core.windows.net":dbutils.secrets.get(scope = "test", key = "storageAccessKey")})
 
 # COMMAND ----------
