@@ -29,6 +29,7 @@ spark.range(5).write
   .format("snowflake")
   .options(options)
   .option("dbtable", "DEMO_DB")
+  .mode("APPEND")
   .save()
 
 // COMMAND ----------
